@@ -22,16 +22,18 @@ export default function Tasks() {
   };
 
   return (
-  
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      {tasks.map((task) => (
-        <TaskCard
-          key={task.id}
-          taskName={task.name}
-          done={task.done}
-          onToggle={(checked) => handleToggle(task.id, checked)}
-        />
-      ))}
+    <div>
+      <h1 className="text-2xl font bold mb-6">Tasks</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        {tasks.map((task) => (
+          <TaskCard
+            key={task.id}
+            taskName={task.name}
+            done={task.done}
+            onToggle={(checked) => handleToggle(task.id, checked)}
+          />
+        ))}
+      </div>
     </div>
   );
 }
